@@ -1,3 +1,6 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-<%= link_to 'All products', products_path %>
+<h1>Product <%= @product.id %></h1>
+<h2><%= @product.name %></h2>
+<section><%= @product.description %></section>
+<footer><%= number_to_currency(@product.price) %></footer>
+<%= link_to 'Edit', edit_product_path(@product)  %>
+<%= link_to 'Back', products_path %>

@@ -3,8 +3,5 @@
 <%= link_to 'Add a new product', new_product_path %>
 
 <dl class="products">
-  <% @products.each do |product| %>
-    <dt><a href="<%= product_path(product) %>"><%= product.name %></a></dt>
-    <dd><%= product.description %></dd>
-  <% end %>
+  <%= render @products %>
 </dl>
