@@ -4,6 +4,6 @@ class Product < ActiveRecord::Base
   validates :price_in_cents, presence: true, numericality: {only_integer: true}
 
   def price
-    price_in_cents.to_f / 100
+    sprintf("$%.2f", price_in_cents.to_f / 100)
   end
 end
