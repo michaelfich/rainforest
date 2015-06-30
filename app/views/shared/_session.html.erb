@@ -1,0 +1,10 @@
+<p style='float:right;margin:0'>
+  <% if session[:user_id] %>
+    Logged in as:
+    <strong><%= User.find(session[:user_id]).email %></strong> |
+    <%= link_to 'Log out', session_path("current"), :method => :delete %>
+  <% else %>
+    <%= link_to 'Log in', new_session_path %> |
+    <%= link_to 'Sign up', new_user_path %>
+  <% end %>
+</p>
