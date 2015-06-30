@@ -1,3 +1,32 @@
+* {
+  font-family: sans-serif;
+}
+
 .field_with_errors {
   display: inline;
+}
+
+nav.session {
+  float: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline;
+      font-size: 10pt;
+      a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 10px 15px;
+        border: 1px solid #222;
+        text-decoration: none;
+        font-weight: bold;
+        color: #222;
+      }
+      a:hover {
+        background: #f9f9f9;
+      }
+    }
+  }
 }
