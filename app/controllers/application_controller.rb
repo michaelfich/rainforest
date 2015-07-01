@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def ensure_logged_in
+    unless current_user
+      flash[:alert] = "Must be signed in to add a product review."
+      redirect_to new_session_path
+    end
+  end
 end
