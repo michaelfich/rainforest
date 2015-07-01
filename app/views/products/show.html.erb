@@ -1,9 +1,17 @@
-<h1>Product <%= @product.id %></h1>
-<h2><%= @product.name %></h2>
+<h1><%= @product.name %></h1>
 <section><%= @product.description %></section>
 <footer><%= @product.price %></footer>
+
 <%= link_to 'Edit', edit_product_path(@product)  %>
 <%= link_to 'Back', products_path %>
+
+<h3>Customer Reviews</h3>
 <% @product.reviews.each do |review| %>
-  <p><%= review.comment %></p>
+  <%= render partial: 'review', locals: {review: review} %>
+<% end %>
+
+<% if current_user %>
+  <%= render partial: 'comment' %>
+<% else %>
+  <a href="<%= new_session_path %>">Log in</a> to post a review.
 <% end %>

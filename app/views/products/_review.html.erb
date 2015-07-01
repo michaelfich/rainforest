@@ -1,0 +1,13 @@
+<section class="review">
+  <article class="comment">
+    <%= review.comment %>
+  </article>
+  <% if review.user %>
+    <footer>
+      Posted by: <%= review.user.email %>
+      <time datetime="<%= review.created_at %>">
+        <%= review.created_at %>
+      </time>
+    </footer>
+  <% end %>
+</section>

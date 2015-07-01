@@ -2,6 +2,11 @@
   font-family: sans-serif;
 }
 
+h1, h2, h3 {
+  margin: 0 0 10px;
+  padding: 20px 0 10px;
+}
+
 .field_with_errors {
   display: inline;
 }
@@ -29,4 +34,11 @@ nav.session {
       }
     }
   }
+}
+
+textarea {
+  resize: none;
+  width: 500px;
+  height: 125px;
+  padding: 10px;
 }
