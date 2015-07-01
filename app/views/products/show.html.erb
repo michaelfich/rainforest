@@ -4,3 +4,6 @@
 <footer><%= @product.price %></footer>
 <%= link_to 'Edit', edit_product_path(@product)  %>
 <%= link_to 'Back', products_path %>
+<% @product.reviews.each do |review| %>
+  <p><%= review.comment %></p>
+<% end %>
