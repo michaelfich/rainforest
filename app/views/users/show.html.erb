@@ -1,0 +1,20 @@
+<h1>Profile</h1>
+
+<section>
+  <strong>Name</strong>
+  <%= @user.name %>
+</section>
+
+<section>
+  <strong>Email address</strong>
+  <%= @user.email %>
+</section>
+
+<section>
+  <strong>Sign up date</strong>
+  <%= @user.created_at %>
+</section>
+
+<% if current_user && current_user == @user %>
+  <%= link_to "Edit", edit_user_path(@user) %>
+<% end %>
