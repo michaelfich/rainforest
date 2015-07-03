@@ -1,8 +1,8 @@
-<h3>Add your comment</h3>
+<h3>Add your own review</h3>
 <%= form_for [@product, @review], html: {class: 'review'} do |f| -%>
   <div class="field">
-    <%= f.label :comment %><br>
+    <%= f.label :comment %>
     <%= f.text_area :comment %>
   </div>
-  <%= f.button %>
+  <%= f.button 'Post Review' %>
 <% end %>

@@ -1,9 +1,19 @@
 <h1><%= @product.name %></h1>
-<section><%= @product.description %></section>
-<footer><%= @product.price %></footer>
 
-<%= link_to 'Edit', edit_product_path(@product)  %>
-<%= link_to 'Back', products_path %>
+<section>
+  <p>
+    <strong>Price:</strong> <%= @product.price %>
+  </p>
+  <article>
+    <strong>Description:</strong><br>
+    <%= @product.description %>
+  </article>
+</section>
+
+<nav>
+  <%= link_to 'Edit', edit_product_path(@product)  %>
+  <%= link_to 'Back', products_path %>
+</nav>
 
 <h3>Customer Reviews</h3>
 <% if @reviews.any? %>

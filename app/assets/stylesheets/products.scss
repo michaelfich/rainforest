@@ -1,8 +1,23 @@
+section.review {
+  margin: 10px 0;
+  article.comment {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+}
+
 form.review {
   textarea {
     width: 500px;
     height: 125px;
     padding: 10px;
     font-size: 12pt;
+    background: rgba(255,255,255,0.2)
+  }
+  textarea:focus {
+    background: rgba(255,255,255,0.4);
+  }
+  button {
+    padding: 15px 45px;
   }
 }
