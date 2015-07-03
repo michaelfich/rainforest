@@ -9,7 +9,9 @@
 
 <dl class="products">
   <dt>Category</dt>
-  <dd><%= @product.category.name.capitalize %></dd>
+  <dd>
+    <%= link_to @product.category.name.capitalize, category_path(@product.category) %>
+  </dd>
 
   <dt>Price</dt>
   <dd><%= @product.price %></dd>
@@ -25,13 +27,11 @@
       <%= render partial: 'review', locals: {review: review} %>
     <% end %>
   <% else %>
-    <em>This product is not yet reviewed.</em>
+    <p class="empty">This product is not yet reviewed.</p>
   <% end %>
 
   <% if current_user %>
-    <dl class="review">
-      <%= render partial: 'comment' %>
-    </dl>
+    <%= render partial: 'comment' %>
   <% else %>
     <a href="<%= new_session_path %>">Log in</a> to post a review.
   <% end %>
