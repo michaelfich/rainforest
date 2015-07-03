@@ -1,4 +1,4 @@
-<%= form_for @product do |f| %>
+<%= form_for @product, html: {class: 'general'} do |f| %>
   <% if @product.errors.any? %>
     <h2>Errors:</h2>
     <ul>
@@ -8,22 +8,23 @@
     </ul>
   <% end %>
 
-  <div>
+  <div class='field'>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div>
+  <div class='field'>
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-  <div>
+  <div class='field'>
     <%= f.label :price_in_cents %>
     <%= f.number_field :price_in_cents %>
   </div>
-  <div>
+  <div class='field'>
     <%= f.label :category_id %>
     <%= f.select :category_id, @categories.map { |c| [c.name.capitalize, c.id] } %>
   </div>
-  <%= f.submit %>
-  <%= link_to 'Back', products_url %>
+  <div class="buttons">
+    <%= f.button 'Save' %>
+  </div>
 <% end %>

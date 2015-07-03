@@ -1,7 +1,17 @@
-<h1>Products</h1>
+<h2>Products</h2>
 
-<%= link_to 'Add a new product', new_product_path %>
+<nav class="buttons">
+  <%= link_to 'Add a new product', new_product_path %>
+</nav>
 
-<ul class="products">
-  <%= render @products %>
-</ul>
+<% if @products.any? %>
+  <ul class="products">
+    <% @products.each do |product| %>
+      <li><a href="<%= product_path(product) %>"><%= product.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    <em>There are no products on <strong>Rainforest</strong> so far</em>
+  </p>
+<% end %>

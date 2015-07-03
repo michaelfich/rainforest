@@ -1,3 +1,40 @@
+dl.products,
+dl.reviews {
+  dt {
+    width: 280px;
+  }
+  dd {
+    width: 640px;
+  }
+  overflow: auto;
+}
+
+ul.products {
+  list-style: none;
+  padding: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+    width: 480px;
+    float: left;
+    a {
+      display: block;
+      margin: 10px;
+      padding: 20px;
+      width: 420px;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,.3);
+      font-size: 1.15em;
+    }
+    a:hover {
+      background: rgba(255,255,255,.2);
+      border: 2px dotted rgba(255,255,255,.6);
+    }
+  }
+}
+
 section.review {
   margin: 10px 0;
   article.comment {
@@ -6,12 +43,48 @@ section.review {
   }
 }
 
+form.general {
+  div.field {
+    margin: 10px 0;
+    padding: 10px 0;
+    label {
+      width: 180px;
+      float: left;
+      padding: 15px;
+      text-align: right;
+    }
+    input,
+    textarea {
+      padding: 10px;
+      font-size: 16pt;
+      color: white;
+      text-shadow: 0px 0px 2px rgba(0,0,0,1);
+    }
+    input {
+      width: 600px;
+    }
+    textarea {
+      width: 600px;
+    }
+    select {
+      margin: 15px 0;
+    }
+  }
+  div.buttons {
+    text-align: center;
+    button {
+      display: inline-block;
+      padding: 8px 25px;
+      border-radius: 20px;
+    }
+  }
+}
+
 form.review {
   textarea {
     width: 500px;
     height: 125px;
     padding: 10px;
-    font-size: 12pt;
     background: rgba(255,255,255,0.2)
   }
   textarea:focus {
@@ -20,4 +93,9 @@ form.review {
   button {
     padding: 15px 45px;
   }
+}
+
+section.reviews {
+  margin: 20px 0;
+  // background: yellow;
 }

@@ -1,3 +1,19 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+dl {
+  dt, dd {
+    margin: 0;
+    padding: 20px 10px;
+    font-size: 1.3em;
+    text-shadow: 2px 2px 3px rgba(0,0,0,1);
+  }
+  dt {
+    display: block;
+    float: left;
+    width: 440px;
+    text-align: right;
+  }
+  dd {
+    display: block;
+    float: left;
+    width: 480px;
+  }
+}

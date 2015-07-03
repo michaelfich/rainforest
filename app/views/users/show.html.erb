@@ -1,20 +1,18 @@
 <h2>User: <%= @user.name %></h2>
 
-<section>
-  <strong>Name</strong>
-  <%= @user.name %>
-</section>
+<nav class="buttons">
+  <% if current_user && current_user == @user %>
+    <%= link_to "Edit Profile", edit_user_path(@user) %>
+  <% end %>
+</nav>
 
-<section>
-  <strong>Email address</strong>
-  <%= @user.email %>
-</section>
+<dl class="profile">
+  <dt>Name</dt>
+  <dd><%= @user.name %></dd>
 
-<section>
-  <strong>Sign up date</strong>
-  <%= @user.created_at %>
-</section>
+  <dt>Email Address</dt>
+  <dd><%= @user.email %></dd>
 
-<% if current_user && current_user == @user %>
-  <%= link_to "Edit", edit_user_path(@user) %>
-<% end %>
+  <dt>Registration Date</dt>
+  <dd><%= @user.created_at %></dd>
+</dl>
