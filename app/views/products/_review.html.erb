@@ -4,7 +4,7 @@
   </article>
   <% if review.user %>
     <footer>
-      Posted by: <%= review.user.email %>
+      Posted by: <strong><%= review.user.name %></strong>
       <time datetime="<%= review.created_at %>">
         <%= review.created_at %>
       </time>

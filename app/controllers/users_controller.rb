@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_filter :ensure_current_user, only: [:edit, :update]
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -6,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to products_url, notice: "Account created!"
     else
       render :new
@@ -36,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def ensure_current_user
-    unless current_user == params[:id]
+    unless current_user.id == params[:id].to_i
       flash[:alert] = 'Only an authorized user can edit their own profile.'
       redirect_to user_url(current_user)
     end

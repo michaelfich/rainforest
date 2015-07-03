@@ -8,9 +8,24 @@
 </head>
 <body>
 
-<%= render 'shared/session' %>
-<%= render 'shared/flash' %>
-<%= yield %>
+<div class="outer_container top">
+  <div class="inner_container">
+    <header>
+      <%= render 'shared/session' %>
+      <section class="flash">
+        <%= render 'shared/flash' %>
+      </section>
+      <h1 class="top"><%= link_to 'Rainforest', root_url %></h1>
+    </header>
+  </div>
+</div>
+<div class="outer_container">
+  <div class="inner_container">
+    <%= yield %>
+  </div>
+</div>
+
+
 
 </body>
 </html>

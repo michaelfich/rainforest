@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630231226) do
+ActiveRecord::Schema.define(version: 20150702145002) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "categories", ["product_id"], name: "index_categories_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -19,7 +28,10 @@ ActiveRecord::Schema.define(version: 20150630231226) do
     t.integer  "price_in_cents"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "category_id"
   end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
@@ -37,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150630231226) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "name"
   end
 
 end

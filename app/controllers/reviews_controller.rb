@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.build(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to products_path, notice: "Your review has been posted."
+      redirect_to product_path(@product), notice: "Your review has been posted."
     else
       render 'products/show'
     end

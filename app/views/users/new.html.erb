@@ -1,8 +1,8 @@
-<h1>Sign up for a new account</h1>
+<h2>Sign up for a new account</h2>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {class: 'user'} do |f| %>
   <% if @user.errors.any? %>
-    <h2>Errors:</h2>
+    <h3>Errors:</h3>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,7 +15,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email, 'Email address'%><br>
     <%= f.email_field :email %>
   </div>
   <div class="field">
@@ -23,8 +23,10 @@
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br>
+    <%= f.label :password_confirmation, 'Confirm password' %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  <%= f.submit %>
+  <div class="buttons">
+    <%= f.button 'Create new account' %>
+  </div>
 <% end %>

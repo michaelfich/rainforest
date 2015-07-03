@@ -6,8 +6,12 @@
 <%= link_to 'Back', products_path %>
 
 <h3>Customer Reviews</h3>
-<% @product.reviews.each do |review| %>
-  <%= render partial: 'review', locals: {review: review} %>
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+    <%= render partial: 'review', locals: {review: review} %>
+  <% end %>
+<% else %>
+  <em>This product is not yet reviewed.</em>
 <% end %>
 
 <% if current_user %>
