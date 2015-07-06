@@ -1,4 +1,5 @@
 dl {
+  overflow: auto;
   dt, dd {
     margin: 0;
     padding: 20px 10px;
@@ -15,5 +16,33 @@ dl {
     display: block;
     float: left;
     width: 480px;
+  }
+}
+
+ul.reviews {
+  padding: 0;
+  list-style: none;
+  width: 680px;
+  margin: 0 auto;
+  li.review {
+    background: rgba(0,0,0,.3);
+    padding: 20px;
+    margin: 0 0 10px;
+    position: relative;
+    header {
+      margin: 0 0 20px;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        // letter-spacing: -1px;
+        font-weight: bold;
+      }
+    }
+    footer {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+    }
   }
 }

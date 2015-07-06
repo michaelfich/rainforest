@@ -14,5 +14,28 @@
   <dd><%= @user.email %></dd>
 
   <dt>Registration Date</dt>
-  <dd><%= @user.created_at %></dd>
+  <dd><%= @user.created_at.to_formatted_s(:long_ordinal) %></dd>
 </dl>
+
+<% if @user.reviews.any? %>
+  <h3>User reviews of products</h3>
+  <ul class="reviews">
+    <% @user.reviews.each do |review| %>
+      <li class="review">
+        <header>
+          <%= link_to review.product.name, product_path(review.product) %>
+        </header>
+        <article>
+          <%= review.comment %>
+        </article>
+        <footer>
+          <%= review.created_at.to_formatted_s(:long_ordinal) %>
+        </footer>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    <em>This user has not yet reviewed any products</em>
+  </p>
+<% end %>
