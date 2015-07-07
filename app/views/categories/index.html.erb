@@ -1,8 +1,10 @@
 <h2>Categories of Products</h2>
 
-<nav class="buttons">
-  <%= link_to 'Add new category', new_category_path %>
-</nav>
+<% if current_user.id == 1 %>
+  <nav class="buttons">
+    <%= link_to 'Add new category', new_category_path %>
+  </nav>
+<% end %>
 
 <ul class='categories'>
   <% @categories.each do |category| %>

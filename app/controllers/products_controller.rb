@@ -53,11 +53,4 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price_in_cents, :category_id)
   end
-
-  def require_admin
-    unless current_user && current_user.id == 1
-      flash[:alert] = "Administrator priviledges required to view that page"
-      redirect_to root_url
-    end
-  end
 end

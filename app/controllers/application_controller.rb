@@ -15,4 +15,11 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def require_admin
+    unless current_user && current_user.id == 1
+      flash[:alert] = "Administrator priviledges required to view that page"
+      redirect_to root_url
+    end
+  end
 end
