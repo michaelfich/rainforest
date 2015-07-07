@@ -1,0 +1,14 @@
+%h2 Edit profile
+- if @user.errors.any?
+  %ul
+    - @user.errors.full_messages.each do |message|
+      %li= message
+= form_for @user, html: {class: 'general'} do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email, 'Email Address'
+    = f.text_field :email
+  .buttons
+    = f.button

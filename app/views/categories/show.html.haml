@@ -1,0 +1,10 @@
+%h2= @category.name.capitalize
+%nav.buttons
+  = link_to 'View all categories', categories_path
+- if @products.any?
+  %ul.products
+    - @products.each do |product|
+      %li= link_to product.name, product_path(product)
+- else
+  %p.empty
+    There are no products belonging to this category yet.

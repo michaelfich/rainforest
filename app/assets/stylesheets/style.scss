@@ -108,6 +108,17 @@ nav.session {
       a:hover {
         background: rgba(255,255,255,.25);
       }
+      a.edit.user {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        background: none;
+        text-decoration: underline;
+      }
+      a.edit.user:hover {
+        text-decoration: none;
+      }
     }
   }
 }

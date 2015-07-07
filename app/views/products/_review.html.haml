@@ -1,0 +1,7 @@
+%section.review
+  %aside.user
+    = review.user.name
+  %article.comment
+    = review.comment
+    %time{datetime: review.created_at}
+      = review.created_at

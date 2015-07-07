@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rainforest</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="outer_container">
+  <div class="inner_container">
+    <header class="primary">
+      <%= render 'shared/session' %>
+      <section class="flash">
+        <%= render 'shared/flash' %>
+      </section>
+    </header>
+
+    <%= yield %>
+  </div>
+</div>
+
+</body>
+</html>

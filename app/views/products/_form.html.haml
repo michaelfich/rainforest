@@ -1,0 +1,21 @@
+= form_for @product, html: {class: 'general'} do |f|
+  - if @product.errors.any?
+    %h2 Errors:
+    %ul
+      - @product.errors.full_messages.each do |message|
+        %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :price_in_cents
+    = f.number_field :price_in_cents
+  .field
+    = f.label :category_id
+    = f.select :category_id, @categories.map { |c| [c.name.capitalize, c.id] }
+  .buttons
+    = f.button 'Save'
+

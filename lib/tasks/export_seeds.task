@@ -1,0 +1,17 @@
+namespace :db do
+  desc "Convert your database into seeds!"
+  task :export_seeds do
+    Rails.application.eager_load!
+    models = ObjectSpace.each_object(Class).select { |c| c < ActiveRecord::Base }
+    p models: models
+
+    ignored_keys = %w[created_at updated_at id]
+
+    models.each do |model|
+      model.all.each do |record|
+        fields = record.attributes.delete_if { |k,v| ignored_keys.include? k }
+        puts "#{c.name}.create(#{f})"
+      end
+    end
+  end
+end

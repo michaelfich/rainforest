@@ -15,16 +15,18 @@ section.review {
     text-align: right;
     font-size: 10pt;
     padding: 20px 10px;
+    a {
+      text-decoration: none;
+    }
   }
   article.comment {
     background: rgba(0,0,0,.2);
     float: left;
-    width: 610px;
+    width: 590px;
     margin: 0;
-    padding: 20px 10px;
+    padding: 20px;
     font-size: 10pt;
     time {
-      margin-top: 15px;
       display: block;
       text-align: right;
     }

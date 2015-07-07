@@ -3,7 +3,9 @@
 </h2>
 
 <nav class="buttons">
-  <%= link_to 'Edit', edit_product_path(@product)  %>
+  <% if current_user && current_user.id == 1 %>
+    <%= link_to 'Edit', edit_product_path(@product)  %>
+  <% end %>
   <%= link_to 'Back', products_path %>
 </nav>
 
@@ -27,12 +29,15 @@
       <%= render partial: 'review', locals: {review: review} %>
     <% end %>
   <% else %>
-    <p class="empty">This product is not yet reviewed.</p>
+    <p class="empty">
+      This product is not yet reviewed.
+    </p>
   <% end %>
-
   <% if current_user %>
     <%= render partial: 'comment' %>
   <% else %>
-    <a href="<%= new_session_path %>">Log in</a> to post a review.
+    <p>
+      <a href="<%= new_session_path %>">Log in</a> to post a review.
+    </p>
   <% end %>
 </section>

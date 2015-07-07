@@ -1,0 +1,9 @@
+%h2 Add Category
+%nav.buttons
+  = link_to 'View all categories', categories_url
+= form_for @category, html: {class: 'general'} do |f|
+  .field
+    = f.label :name, 'Category name: '
+    = f.text_field :name
+  .buttons
+    = f.button

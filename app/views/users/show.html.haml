@@ -1,0 +1,12 @@
+%h2
+  User: #{@user.name}
+%nav.buttons
+  - if current_user && current_user == @user
+    = link_to "Edit Profile", edit_user_path(@user)
+%dl.profile
+  %dt Name
+  %dd= @user.name
+  %dt Email Address
+  %dd= @user.email
+  %dt Registration Date
+  %dd= @user.created_at
