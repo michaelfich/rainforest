@@ -4,22 +4,22 @@ toys        = Category.create(name: 'Toys')
 video_games = Category.create(name: 'Video Games')
 
 Product.create(
-  name: "Avengers: Age of Ultron", price_in_cents: 2800, category: movies
+  name: "Avengers: Age of Ultron", price_in_cents: 2800, category: movies,
   description: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.",
 )
 
 Product.create(
-  name: "Man of Steel", price_in_cents: 2500, category: movies
+  name: "Man of Steel", price_in_cents: 2500, category: movies,
   description: "Clark Kent, one of the last of an extinguished race disguised as an unremarkable human, is forced to reveal his identity when Earth is invaded by an army of survivors who threaten to bring the planet to the brink of destruction.",
 )
 
 Product.create(
-  name: "X-Men: Days of Future Past", price_in_cents: 2000, category: movies
+  name: "X-Men: Days of Future Past", price_in_cents: 2000, category: movies,
   description: "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
 )
 
 Product.create(
-  name: "The Dark Knight", price_in_cents: 3000, category: movies
+  name: "The Dark Knight", price_in_cents: 3000, category: movies,
   description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
 )
 
@@ -58,16 +58,3 @@ Product.create(
   name: "Halo", price_in_cents: 0, category: video_games,
   description: "Switch between foot-based fighting and vehicle-based attacks, where you can pilot flyers, tanks, or buggies, or man the guns while another squad member drives. Multiplayer action in Halo: Combat Evolved gives players the option of co-op missions or free-for-all shootouts."
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
