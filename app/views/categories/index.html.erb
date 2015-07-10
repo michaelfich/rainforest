@@ -1,6 +1,6 @@
 <h2>Categories of Products</h2>
 
-<% if current_user.id == 1 %>
+<% if current_user && current_user.id == 1 %>
   <nav class="buttons">
     <%= link_to 'Add new category', new_category_path %>
   </nav>
