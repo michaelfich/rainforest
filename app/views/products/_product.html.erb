@@ -1,1 +1,7 @@
-  <li><a href="<%= product_path(product) %>"><%= product.name %></a></li>
+  <li>
+    <a href="<%= product_path(product) %>">
+      <span class="name"><%= product.name %></span>
+      <span class="category">Category: <%= product.category.name.capitalize %></span>
+      <span class="reviews">Reviews: <%= product.reviews.count %></span>
+    </a>
+  </li>

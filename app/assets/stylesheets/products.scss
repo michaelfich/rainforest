@@ -12,9 +12,9 @@ dl.reviews {
 #products ul {
   list-style: none;
   padding: 0;
-  margin: 50px 0;
+  margin: 20px 0;
   li {
-    margin: 0;
+    margin: 0 0 3px;
     padding: 0;
     width: 100%;
     a {
@@ -22,20 +22,26 @@ dl.reviews {
       padding: 20px;
       width: 100%;
       box-sizing: border-box;
-      text-align: center;
       text-decoration: none;
-      border-right: 2px solid rgba(255,255,255,.3);
-      border-bottom: 2px solid rgba(255,255,255,.3);
-      border-left: 2px solid rgba(255,255,255,.3);
+      background: rgba(0,0,0,.5);
       font-size: 1.15em;
+      position: relative;
+      span.category {
+        display: block;
+        margin: 20px 0 0;
+        font-size: 0.8em;
+      }
+      span.reviews {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 20px;
+        font-size: 0.8em;
+      }
     }
     a:hover {
-      background: rgba(255,255,255,.2);
-    }
-  }
-  li:first-child {
-    a {
-      border-top: 2px solid rgba(255,255,255,.3);
+      background: rgba(0,0,0,.2);
     }
   }
 }
@@ -117,9 +123,9 @@ section.reviews {
 #search-form {
   width: 100%;
   position: relative;
-  margin: 0 auto;
+  margin: 20px auto 0;
 
-  input {
+  input[type=text] {
     padding: 20px;
     font-size: 1.2em;
     color: white;
