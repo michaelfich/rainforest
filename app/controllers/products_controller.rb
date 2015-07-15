@@ -2,7 +2,15 @@ class ProductsController < ApplicationController
   before_action :require_admin, only: [:edit, :update, :create, :new, :destroy]
 
   def index
-    @products = Product.all
+    @products = if params[:search]
+      Product.where("LOWER(name) LIKE ?", "%#{params[:search].downcase}%")
+    else
+      Product.all
+    end
+
+    if request.xhr?
+      render @products
+    end
   end
 
   def show

@@ -9,28 +9,33 @@ dl.reviews {
   overflow: auto;
 }
 
-ul.products {
+#products ul {
   list-style: none;
   padding: 0;
-  padding: 0;
+  margin: 50px 0;
   li {
     margin: 0;
     padding: 0;
-    width: 480px;
-    float: left;
+    width: 100%;
     a {
       display: block;
-      margin: 10px;
       padding: 20px;
-      width: 420px;
+      width: 100%;
+      box-sizing: border-box;
       text-align: center;
       text-decoration: none;
-      border: 2px solid rgba(255,255,255,.3);
+      border-right: 2px solid rgba(255,255,255,.3);
+      border-bottom: 2px solid rgba(255,255,255,.3);
+      border-left: 2px solid rgba(255,255,255,.3);
       font-size: 1.15em;
     }
     a:hover {
       background: rgba(255,255,255,.2);
-      border: 2px dotted rgba(255,255,255,.6);
+    }
+  }
+  li:first-child {
+    a {
+      border-top: 2px solid rgba(255,255,255,.3);
     }
   }
 }
@@ -107,4 +112,28 @@ form.comment {
 
 section.reviews {
   margin: 20px 0;
+}
+
+#search-form {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+
+  input {
+    padding: 20px;
+    font-size: 1.2em;
+    color: white;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 140px;
+  }
+  button {
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 11px;
+    height: 40px;
+    background-color: #212121;
+  }
 }

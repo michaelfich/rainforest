@@ -36,7 +36,7 @@
   <% if current_user %>
     <%= render partial: 'comment' %>
   <% else %>
-    <p>
+    <p class="empty">
       <a href="<%= new_session_path %>">Log in</a> to post a review.
     </p>
   <% end %>

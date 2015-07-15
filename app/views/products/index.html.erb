@@ -1,19 +1,24 @@
 <h2>Products</h2>
 
-<% if current_user && current_user.id == 1 %>
+<% if current_user && current_user.id === 1 %>
   <nav class="buttons">
     <%= link_to 'Add a new product', new_product_path %>
   </nav>
 <% end %>
 
-<% if @products.any? %>
-  <ul class="products">
-    <% @products.each do |product| %>
-      <li><a href="<%= product_path(product) %>"><%= product.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>
-    <em>There are no products on <strong>Rainforest</strong> so far</em>
-  </p>
+<%= form_tag products_path, method: :get, authentication: false, id: "search-form" do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= button_tag "Search" %>
 <% end %>
+
+<div id="products">
+  <% if @products.any? %>
+    <ul>
+      <%= render @products %>
+    </ul>
+  <% else %>
+    <p>
+      <em>There are no products on <strong>Rainforest</strong> so far</em>
+    </p>
+  <% end %>
+</div>
