@@ -1,21 +1,29 @@
 <h2>Products</h2>
 
-<% if current_user && current_user.id === 1 %>
+<% if current_user && current_user.id == 1 %>
   <nav class="buttons">
     <%= link_to 'Add a new product', new_product_path %>
   </nav>
 <% end %>
 
 <%= form_tag products_path, method: :get, authentication: false, id: "search-form" do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], placeholder: "Filter results" %>
   <%= button_tag "Search" %>
 <% end %>
 
 <div id="products">
   <% if @products.any? %>
-    <ul>
-      <%= render @products %>
-    </ul>
+    <header>
+      <%= page_entries_info @products %>
+    </header>
+    <section>
+      <ul>
+        <%= render @products %>
+      </ul>
+    </section>
+    <footer>
+      <%= paginate @products %>
+    </footer>
   <% else %>
     <p>
       <em>There are no products on <strong>Rainforest</strong> so far</em>

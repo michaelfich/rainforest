@@ -1,6 +1,0 @@
-%h2 Categories of Products
-%nav.buttons
-  = link_to 'Add new category', new_category_path
-%ul.categories
-  - @categories.each do |category|
-    %li= link_to category.name.capitalize, category

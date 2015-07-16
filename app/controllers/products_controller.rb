@@ -8,8 +8,13 @@ class ProductsController < ApplicationController
       Product.all
     end
 
-    if request.xhr?
-      render @products
+    @products = @products.page(params[:page])
+
+    respond_to do |format|
+      format.html do
+        render @products if request.xhr?
+      end
+      format.js
     end
   end
 

@@ -2,6 +2,10 @@
     <a href="<%= product_path(product) %>">
       <span class="name"><%= product.name %></span>
       <span class="category">Category: <%= product.category.name.capitalize %></span>
-      <span class="reviews">Reviews: <%= product.reviews.count %></span>
+      <% if product.reviews.count > 0 %>
+        <span class="reviews">Reviews: <%= product.reviews.count %></span>
+      <% else %>
+        <span class="reviews empty">(no reviews)</span>
+      <% end %>
     </a>
   </li>
