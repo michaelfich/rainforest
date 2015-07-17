@@ -1,6 +1,14 @@
+User.destroy_all
 Review.destroy_all
 Category.destroy_all
 Product.destroy_all
+
+User.create(
+  name: "Michael Fich",
+  email: "admin@rainforest.com",
+  password: "1234",
+  password_confirmation: "1234"
+)
 
 books       = Category.create(name: 'Books')
 movies      = Category.create(name: 'Movies')
@@ -1793,7 +1801,7 @@ Product.create(
 );
 
 Product.create(
-  name: "The GraduateProduct.create",
+  name: "The Graduate",
   price_in_cents: 4000,
   category: movies,
   description: "A movie from the IMDB Top 250 All Time Movies list"

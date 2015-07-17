@@ -1,5 +1,6 @@
 dl.products,
 dl.reviews {
+  line-height: 2em;
   dt {
     width: 280px;
   }
@@ -143,4 +144,8 @@ section.reviews {
     height: 40px;
     background-color: #212121;
   }
+}
+
+nav.pagination {
+  text-align: center;
 }
