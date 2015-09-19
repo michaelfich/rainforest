@@ -1,2 +1,11 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<section class="review">
+  <aside class="user name">
+    <%= link_to review.user.name, user_path(review.user) %>
+  </aside>
+  <article class="review comment">
+    <%= review.comment %>
+    <time datetime="<%= review.created_at %>">
+      <%= review.created_at.to_formatted_s(:long_ordinal) %>
+    </time>
+  </article>
+</section>

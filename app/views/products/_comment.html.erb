@@ -1,4 +1,4 @@
-<%= form_for [@product, @review], html: {class: 'general comment'} do |f| -%>
+<%= form_for [@product, @review], remote: true, html: {class: 'general comment'} do |f| -%>
   <h3>Add your own review</h3>
 
   <div class="field">

@@ -9,10 +9,21 @@ class ReviewsController < ApplicationController
   def create
     @review = @product.reviews.build(review_params)
     @review.user = current_user
-    if @review.save
-      redirect_to product_path(@product), notice: "Your review has been posted."
-    else
-      render 'products/show'
+
+    respond_to do |format|
+      if @review.save
+        format.html do
+          redirect_to product_path(@product), notice: "Your review has been posted."
+        end
+        format.js do
+          @reviews = @product.reviews
+        end
+      else
+        format.html do
+          render 'products/show'
+        end
+        format.js
+      end
     end
   end
 

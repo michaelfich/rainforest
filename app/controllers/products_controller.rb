@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @reviews = @product.reviews.most_recent_first
+    @reviews = @product.reviews.oldest_first
     if current_user
       @review = @product.reviews.build
     end
@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    # @product.categories()
     if @product.save
       redirect_to @product
     else
